@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+}
+:root {
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  height: 100dvh;
+  width: 100dvw;
+}
+
+@layer base {
+  html, body {
+    @apply flex flex-col h-screen bg-primary-300 text-slate-900 overflow-hidden;
+  }
+  /*-- HEADINGS --*/
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply font-serif text-center font-[800];
+    }
+    h1 {
+      @apply leading-none py-2 text-5xl md:text-6xl text-center text-secondary-500;
+    }
+    h2 {
+      @apply text-center text-3xl md:text-4xl;
+    }
+    h3 {
+      @apply text-2xl lg:text-3xl;
+    }
+    h4 {
+      @apply text-xl lg:text-2xl font-extrabold italic text-slate-700;
+    }
+    h5 {
+      @apply text-lg md:text-xl font-bold;
+    }
+    h6 {
+      @apply text-base md:text-lg font-bold italic text-slate-700;
+    }
+    /*-- PARAGRAPHS --*/
+    p {
+      @apply font-sans text-base md:text-lg text-justify whitespace-pre-line max-w-[100%] h-min dark:text-white;
+    }
+    .texto-formal {
+      @apply first-letter:text-4xl  md:first-letter:text-7xl  first-letter:font-[900]  first-letter:font-serif first-letter:float-left first-letter:mr-2;
+    }
+    /*-- LINKS --*/
+    a {
+      @apply no-underline hover:underline hover:text-red-500;
+    }
+  
+}
+
+@layer components {
+   .content {
+      @apply flex flex-1 flex-col justify-between md:justify-center mb-2 mx-4 p-4 pr-2 overflow-y-auto overflow-x-hidden;
+    }
+  /*-- TABLE --*/
+  .table {
+    @apply bg-primary-300 *:bg-transparent;
+  }
+  /*---- DIVIDER ----*/
+  .divider {
+    @apply py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600;
+  }
+  /*-- SEARCHBAR --*/
+  .searchbar {
+    @apply hidden md:flex w-full py-1 px-2 bg-gradient-to-b from-white to-slate-100 rounded-full;
+  }
+  /*-- CONSERTAR!!! --*/
+  .icon-button {
+    @apply text-blue-500;
+  }
+  .icon {
+    @apply text-red-500;
+  }
+}
